@@ -1,0 +1,29 @@
+---
+- name: Install zsh
+  package: name=zsh state=present
+  become: True
+  ignore_errors: True
+
+- name: Create zsh dirs
+  file: path={{item}} state=directory
+  with_items:
+    - ~/.zfunctions
+    - ~/.zsh
+
+- name: Install antigen
+  shell: curl -L git.io/antigen > ~/.zsh/antigen.zsh
+  args:
+    creates: ~/.zsh/antigen.zsh
+  check_mode: no
+  changed_when: False
+
+- name: Configure zshrc
+  template:
+    src: templates/zshrc.j2
+    dest: ~/.zshrc
+    backup: yes
+
+- debug:
+    msg: "Do not forget to 'chsh /usr/bin/zsh'"
+
+

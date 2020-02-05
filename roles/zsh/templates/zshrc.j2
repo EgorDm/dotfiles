@@ -1,0 +1,86 @@
+source ~/.zsh/antigen.zsh
+
+# Antigen
+## Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+## Useful plugins
+antigen bundle git
+antigen bundle dotenv
+antigen bundle sudo
+antigen bundle extract
+antigen bundle virtualenv
+antigen bundle webyneter/docker-aliases.git
+
+## ZSH decorations
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle ael-code/zsh-colored-man-pages
+
+## Theme
+antigen theme bira 
+
+## Done with antigen
+antigen apply
+
+
+# Commands and such
+## Config
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.config/nvim/init.vim"
+alias sshconfig="vim ~/.ssh/config"
+alias xinconfig="vim ~/.xinitrc"
+alias i3config="vim ~/.config/i3/config"
+alias helpconfig="echo 'Available Configs: zshconfig, vimconfig, sshconfig, xinconfig, i3config'"
+
+## Shorthands
+alias vim='nvim'
+alias vi='nvim'
+
+alias gs='git status'
+alias d='docker'
+alias dc='docker-compose'
+alias dcu='docker-compose up'
+alias dcd='docker-compose down'
+alias dcb='docker-compose build'
+alias dst='sudo systemctl start docker.service'
+
+alias lh="du -ahd1 | sort -h"
+
+alias chrome="google-chrome-stable"
+
+function drips() {
+  {% raw %}
+  d ps -q | xargs -n 1 d inspect --format '{{ .NetworkSettings.IPAddress }} {{ .Name }}' | sed 's/ \// /'
+  {% endraw %}
+}
+
+function wanip() { curl icanhazip.com }
+function lanip() { 
+  ip a | grep $(ip r | grep default | head | cut -d\  -f5) | grep inet | awk '{print $2}' | cut -d"/" -f1 
+}
+
+alias ix="curl -s -F 'f:1=<-' ix.io" # Usage echo 'Hello World!' | ix
+function bak() { cp "$1" "$1.bak" }
+
+## Programs and shizzle
+[ -f ~/programs/anaconda/etc/profile.d/conda.sh ] && source ~/programs/anaconda/etc/profile.d/conda.sh
+[ -f ~/programs/myshell/source_rc.sh ] && source ~/programs/myshell/source_rc.sh
+
+## Fuzz Buzz
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+## Path
+export PATH="~/programs/anaconda/bin:$PATH"        # Prepending avoids a lot of errors
+export PATH="$PATH:~/.config/composer/vendor/bin"
+
+## Exports
+export MAGICK_OCL_DEVICE=OFF                       # Fixes imagick errors at conversion
+export EDITOR='vim'
+export VISUAL='vim'
+export BROWSER='google-chrome-stable'
+
+## Other configs
+{% include 'by_host/' + ansible_hostname + '/zshrc.j2' ignore missing %}
+
