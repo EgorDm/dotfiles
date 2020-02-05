@@ -4,3 +4,12 @@
     - { role: packages-common, tags: packages-common }
     - { role: zsh, tags: zsh } 
     - { role: neovim, tags: neovim } 
+    - { role: screen, tags: screen } 
+    - { role: xprofile, tags: xprofile } 
+    - { role: packages-desktop, tags: packages-desktop } 
+    - { role: gtk, tags: gtk } 
+    - { role: i3-wm, tags: i3-wm } 
+    - { role: picom, tags: picom } 
+    - { role: polybar, tags: polybar } 
+
+
