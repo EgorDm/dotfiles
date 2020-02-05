@@ -1,0 +1,35 @@
+---
+- name: Install Desktop packages
+  package:
+    name:
+      - xorg-server
+      - xorg-xinit
+      - xclip
+      - xorg-xrdb
+      - xorg-xfd
+      - networkmanager
+      - network-manager-applet
+      - ttf-fira-code
+      - ttf-impallari-cabin-font
+      - nautilus
+      - kitty
+      - kitty-terminfo
+      - lxappearance # TODO: dev dependency
+    state: present
+  become: True
+
+- name: Install Desktop (AUR) packages
+  aur:
+    name:
+      - yay
+    skip_installed: yes
+
+- name: Test host packages file
+  stat:
+    path: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
+  register: host_file
+
+- name: Include distribution packages
+  include_tasks: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
+  when: host_file.stat.exists
+
