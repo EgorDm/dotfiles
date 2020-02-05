@@ -1,0 +1,22 @@
+version: '3.7'
+services:
+  desktop:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        CFG_USER: ${CFG_USER}
+        CFG_PASS: ${CFG_PASS}
+        CFG_HOST: ${CFG_HOST}
+    volumes:
+      - .:/home/${CFG_USER}/dotfiles
+    image: desktop
+    container_name: desktop
+    env_file: .env
+    networks:
+      - dotfiles
+
+networks:
+  dotfiles:
+    driver: bridge
+
