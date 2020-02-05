@@ -1,0 +1,6 @@
+---
+- hosts: all
+  roles:
+    - { role: packages-common, tags: packages-common }
+    - { role: zsh, tags: zsh } 
+    - { role: neovim, tags: neovim } 
