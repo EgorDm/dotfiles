@@ -1,0 +1,16 @@
+---
+- name: Install compton
+  package:
+    name: picom
+  become: yes
+
+- name: Configure picom
+  copy:
+    src: picom
+    dest: ~/.picom
+    backup: yes
+
+- name: Init compton in .xprofile
+  copy:
+    src: picom.sh
+    dest: ~/.xprofile.d/
