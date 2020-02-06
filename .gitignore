@@ -2,3 +2,5 @@
 hosts
 .env
 /.vagrant
+/dev
+!/dev/.gitkeep

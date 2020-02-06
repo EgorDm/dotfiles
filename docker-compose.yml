@@ -10,6 +10,7 @@ services:
         CFG_HOST: ${CFG_HOST}
     volumes:
       - .:/home/${CFG_USER}/dotfiles
+      - ./dev/pacman-cache:/var/cache/pacman/pkg
     image: desktop
     container_name: desktop
     env_file: .env

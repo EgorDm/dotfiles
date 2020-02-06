@@ -1,7 +1,7 @@
 ---
 - hosts: all
   roles:
-    - { role: packages-common, tags: packages-common }
+    - { role: packages-base, tags: packages-base }
     - { role: zsh, tags: zsh } 
     - { role: neovim, tags: neovim } 
     - { role: screen, tags: screen } 
@@ -11,5 +11,4 @@
     - { role: i3-wm, tags: i3-wm } 
     - { role: picom, tags: picom } 
     - { role: polybar, tags: polybar } 
-
 

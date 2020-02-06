@@ -7,10 +7,11 @@
       - xclip
       - xorg-xrdb
       - xorg-xfd
+      - xorg-xrandr 
       - networkmanager
       - network-manager-applet
       - ttf-fira-code
-      - ttf-impallari-cabin-font
+      - feh
       - nautilus
       - kitty
       - kitty-terminfo
@@ -22,6 +23,7 @@
   aur:
     name:
       - yay
+      - ttf-impallari-cabin-font
     skip_installed: yes
 
 - name: Test host packages file

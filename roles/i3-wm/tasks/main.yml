@@ -35,3 +35,8 @@
     src: config.j2
     dest: ~/.i3/config
     backup: yes
+
+- name: Init wallpaper in .xprofile
+  copy:
+    src: wallpaper.sh
+    dest: ~/.xprofile.d/
