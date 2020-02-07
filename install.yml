@@ -11,4 +11,5 @@
     - { role: i3-wm, tags: i3-wm } 
     - { role: picom, tags: picom } 
     - { role: polybar, tags: polybar } 
+    - { role: kitty, tags: kitty } 
 

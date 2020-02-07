@@ -13,8 +13,6 @@
       - ttf-fira-code
       - feh
       - nautilus
-      - kitty
-      - kitty-terminfo
       - lxappearance # TODO: dev dependency
     state: present
   become: True

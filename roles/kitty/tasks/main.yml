@@ -1,0 +1,14 @@
+---
+- name: Install Kitty packages
+  package:
+    name:
+      - kitty
+      - kitty-terminfo
+    state: present
+  become: true
+
+- name: Configure kitty
+  copy:
+    src: kitty.conf
+    dest: ~/.config/kitty/kitty.conf
+    backup: yes
