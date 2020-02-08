@@ -4,5 +4,5 @@ exec = pgrep openvpn
 interval = 5
 label = vpn
 format-underline = #268bd2
-format-prefix = " "
+format-prefix = "聯"
 format-prefix-foreground = #5b

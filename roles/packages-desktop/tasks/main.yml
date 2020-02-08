@@ -8,11 +8,13 @@
       - xorg-xrdb
       - xorg-xfd
       - xorg-xrandr 
-      - networkmanager
-      - network-manager-applet
-      - ttf-fira-code
+      - networkmanager-openvpn 
+      - nm-connection-editor
+      - openvpn
+      - alsa-utils
       - feh
       - nautilus
+      - jgmenu
       - lxappearance # TODO: dev dependency
     state: present
   become: True
@@ -21,7 +23,6 @@
   aur:
     name:
       - yay
-      - ttf-impallari-cabin-font
     skip_installed: yes
 
 - name: Test host packages file

@@ -2,10 +2,10 @@
 type = internal/date
 interval = 1
 
-date = "%d%{F#92}%m%{F-}%{F#49}%y%{F-}"
+date = "%d/%{F#B2}%m/%{F-}%{F#90}%y%{F-}"
 date-alt = " %d"
 
-time = "%H%{F#92}%M%{F-}%{F#49}%S%{F-}"
+time = "%H:%{F#B2}%M:%{F-}%{F#90}%S%{F-}"
 time-alt =  %H:%M
 
 ;format-prefix = 

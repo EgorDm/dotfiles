@@ -1,0 +1,14 @@
+---
+- name: Install fonts 
+  package:
+    name:
+      - ttf-fira-code
+    state: present
+  become: True
+
+- name: Install fonts (AUR)
+  aur:
+    name:
+      - ttf-impallari-cabin-font
+      - ttf-nerd-fonts-symbols 
+    skip_installed: yes

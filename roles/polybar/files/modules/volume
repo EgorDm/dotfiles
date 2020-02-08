@@ -1,11 +1,11 @@
 [module/volume]
-type = internal/alsa
+type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = ""
+label-volume = "墳"
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = "ﱝ "
 format-muted-foreground = ${colors.foreground-alt}
 label-muted = muted
 

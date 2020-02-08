@@ -1,6 +1,6 @@
 #!/bin/bash
 pac=$(checkupdates 2>/dev/null | wc -l)
-aur=$(trizen -Qua 2>/dev/null | wc -l)
+aur=$(yay -Qua 2>/dev/null | wc -l)
 
 if [[ $pac -eq "0" ]] && [[ $aur -eq "0" ]] || [[ ! $pac =~ [0-9]+ ]] || [[ ! $aur =~ [0-9]+ ]]
 then
@@ -9,7 +9,7 @@ fi
 
 if [[ $(checkupdates | grep '^linux\ ') ]]
 then
-    echo "$pac %{F#ff5c57}%{F-} $aur"
+    echo "$pac %{F#ff5c57}累%{F-} $aur"
 else
-    echo "$pac %{F#5b5b5b}%{F-} $aur"
+    echo "$pac %{F#5b5b5b}累%{F-} $aur"
 fi

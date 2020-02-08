@@ -6,7 +6,7 @@
 
 - name: Create config dir
   file:
-    path: ~/.config/picom/picom.conf 
+    path: ~/.config/picom 
     state: directory
 
 - name: Configure picom

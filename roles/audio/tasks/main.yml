@@ -1,0 +1,8 @@
+---
+- name: Install Desktop packages
+  package:
+    name:
+      - alsa-utils
+      - pulseaudio
+    state: present
+  become: True 

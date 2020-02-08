@@ -2,8 +2,8 @@
 - name: Install polybar
   aur:
     name:
-      - siji-git
       - polybar
+      - pacman-contrib
     skip_installed: yes
 
 - name: Create polybar conf dir
@@ -11,22 +11,9 @@
     path: ~/.config/polybar
     state: directory
 
-- name: Add pkg check script
-  copy:
-    src: pkg.sh
-    dest: ~/.config/polybar/
-    mode: 0755
-  notify: restart polybar
-
-- name: Sync bars
+- name: Copy files
   synchronize:
-    src: files/bars
-    dest: ~/.config/polybar/
-  notify: restart polybar
-
-- name: Sync modules
-  synchronize:
-    src: files/modules
+    src: files/
     dest: ~/.config/polybar/
   notify: restart polybar
 
@@ -43,9 +30,3 @@
     backup: yes
   notify: restart polybar
 
-- name: Template config file
-  copy:
-    src: config
-    dest: ~/.config/polybar/
-    backup: yes
-  notify: restart polybar

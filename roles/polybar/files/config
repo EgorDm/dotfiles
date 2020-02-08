@@ -1,6 +1,6 @@
 [colors]
-background     = #222
-background-alt = #444
+background     = #CC222222
+background-alt = #CC444444
 foreground     = #dfdfdf
 foreground-alt = #55
 primary        = #ffb52a
@@ -35,27 +35,28 @@ include-file = ~/.config/polybar/bars/top
 include-file = ~/.config/polybar/bars/bottom
 
 ; modules includes
-; include-file = ~/.config/polybar/modules/xwindow
-; include-file = ~/.config/polybar/modules/xkeyboard
-; include-file = ~/.config/polybar/modules/jgmenu
-; include-file = ~/.config/polybar/modules/filesystem-home
-; include-file = ~/.config/polybar/modules/filesystem-slash
-; include-file = ~/.config/polybar/modules/i3
-; include-file = ~/.config/polybar/modules/backlight
-; include-file = ~/.config/polybar/modules/cpu
-; include-file = ~/.config/polybar/modules/memory
-; include-file = ~/.config/polybar/modules/wlan
-; include-file = ~/.config/polybar/modules/eth
-; include-file = ~/.config/polybar/modules/networkspeedup-wired
-; include-file = ~/.config/polybar/modules/networkspeedup-wireless
-; include-file = ~/.config/polybar/modules/networkspeeddown-wired
-; include-file = ~/.config/polybar/modules/networkspeeddown-wireless
-; include-file = ~/.config/polybar/modules/date
-; include-file = ~/.config/polybar/modules/volume
-; include-file = ~/.config/polybar/modules/battery
-; include-file = ~/.config/polybar/modules/temperature
-; include-file = ~/.config/polybar/modules/pkg
+include-file = ~/.config/polybar/modules/powermenu
+
+include-file = ~/.config/polybar/modules/date
+include-file = ~/.config/polybar/modules/battery
+
+include-file = ~/.config/polybar/modules/network
+include-file = ~/.config/polybar/modules/networkspeed
+
+include-file = ~/.config/polybar/modules/pkg
+include-file = ~/.config/polybar/modules/vpncheck
+include-file = ~/.config/polybar/modules/volume
+include-file = ~/.config/polybar/modules/backlight
+
+include-file = ~/.config/polybar/modules/filesystem-home
+include-file = ~/.config/polybar/modules/filesystem-slash
+include-file = ~/.config/polybar/modules/cpu
+include-file = ~/.config/polybar/modules/memory
+include-file = ~/.config/polybar/modules/temperature
+
+include-file = ~/.config/polybar/modules/i3
+include-file = ~/.config/polybar/modules/playerctl
+include-file = ~/.config/polybar/modules/xwindow
+include-file = ~/.config/polybar/modules/jgmenu
 ; include-file = ~/.config/polybar/modules/redshift
-; include-file = ~/.config/polybar/modules/vpncheck
-; include-file = ~/.config/polybar/modules/powermenu
-; include-file = ~/.config/polybar/modules/playerctl
+; include-file = ~/.config/polybar/modules/xkeyboard
