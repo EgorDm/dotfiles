@@ -11,7 +11,7 @@ set $alt Mod1
 font pango:Cabin, FontAwesome 10
 
 ## Resolv i3 transparancy bug
-new_window pixel
+default_border pixel
 
 ## Colors
 # class                 border  backgr. text    indicator child_border
@@ -27,7 +27,6 @@ gaps inner 4
 gaps outer -4
 smart_gaps on
 smart_borders on
-
 
 # Window control etc
 ## Use Mouse+$mod to drag floating windows to their wanted position
@@ -154,5 +153,4 @@ bindsym $mod+c exec chrome
 # Startup programs
 ## Polybar exec
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-
 
