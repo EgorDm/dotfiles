@@ -1,0 +1,22 @@
+---
+- name: Install rofi
+  package:
+    name: rofi
+  become: yes
+
+- name: Create rofi conf dir
+  file:
+    path: ~/.config/rofi
+    state: directory
+
+- name: Copy Xresources.d rofi file
+  copy:
+    src: rofi
+    dest: ~/.Xresources.d/rofi
+
+- name: Init rofi in Xresources
+  lineinfile:
+    path: ~/.Xresources
+    create: yes
+    state: present
+    line: '#include ".Xresources.d/rofi"'
