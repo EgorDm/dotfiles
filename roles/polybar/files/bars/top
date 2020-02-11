@@ -32,7 +32,7 @@ font-3 = "Fira Code:pixelsize=9;2"
 
 modules-left = i3 xwindow
 modules-center =
-modules-right = backlight volume pkg vpncheck wlan eth vpncheck date
+modules-right = backlight volume pkg vpncheck wlan eth vpncheck date powermenu
 tray-position = right
 tray-padding = 4
 ;tray-transparent = true

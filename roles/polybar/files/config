@@ -58,5 +58,7 @@ include-file = ~/.config/polybar/modules/i3
 include-file = ~/.config/polybar/modules/playerctl
 include-file = ~/.config/polybar/modules/xwindow
 include-file = ~/.config/polybar/modules/jgmenu
+
+include-file = ~/.config/polybar/modules/rofi-usb-mount
 ; include-file = ~/.config/polybar/modules/redshift
 ; include-file = ~/.config/polybar/modules/xkeyboard
