@@ -3,26 +3,8 @@
   aur:
     name:
       - i3-gaps
-      - i3lock
+      - i3lock-color
     skip_installed: yes
-
-- name: Clone i3lock-fancy-multimonitor
-  git:
-    repo: https://github.com/guimeira/i3lock-fancy-multimonitor
-    dest: ~/.i3/i3lock-fancy-multimonitor
-    update: no
-
-- name: Configure i3lock blur
-  lineinfile:
-    path: ~/.i3/i3lock-fancy-multimonitor/lock
-    regexp: '^BLURTYPE="2x8"'
-    line: '#BLURTYPE="2x8"'
-
-- name: Configure i3lock blur bis
-  lineinfile:
-    path: ~/.i3/i3lock-fancy-multimonitor/lock
-    regexp: '^#BLURTYPE="5x3"'
-    line: 'BLURTYPE="5x3"'
 
 - name: Configure xinitrc
   copy:
@@ -40,3 +22,46 @@
   copy:
     src: wallpaper.sh
     dest: ~/.xprofile.d/
+
+- name: Install i3 lock requirements
+  package:
+    name:
+      - scrot
+      - imagemagick
+      - bc
+      - xorg-xdpyinfo
+      - xorg-xset
+    state: present
+  become: yes
+  ignore_errors: yes
+
+- name: Clone betterlockscreen
+  git:
+    repo: https://github.com/pavanjadhaw/betterlockscreen.git
+    dest: ~/.config/betterlockscreen
+    update: no
+
+- name: Create local bin folder 
+  file:
+    path: ~/.local/bin/
+    state: directory
+
+- name: Copy lockscreen binaries 
+  become: true
+  copy:
+    src: ~/.config/betterlockscreen/betterlockscreen
+    dest: /usr/bin/betterlockscreen
+    mode: a+x
+
+- name: Generate lockscreen background
+  command: betterlockscreen -u ~/dotfiles/wallpapers/wallpaper.jpg
+
+- name: Copy the service 
+  become: true
+  copy:
+    src: ~/.config/betterlockscreen/system/betterlockscreen@.service 
+    dest: /etc/systemd/system/betterlockscreen@.service
+
+- name: Register lock service
+  command: systemctl enable betterlockscreen@$USER
+

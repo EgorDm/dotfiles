@@ -1,1 +1,2 @@
-feh --bg-fill ~/dotfiles/wallpapers/wallpaper.jpg &
+#feh --bg-fill ~/dotfiles/wallpapers/wallpaper.jpg &
+betterlockscreen --wall
