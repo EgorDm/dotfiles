@@ -1,0 +1,23 @@
+---
+---
+- name: Install rofi
+  package:
+    name:
+      - w3m
+      - neofetch
+  become: yes
+
+- name: creates neofetch conf dir
+  file:
+    path: ~/.config/neofetch
+    state: directory
+
+- name: Configure neofetch
+  copy:
+    src: config.conf
+    dest: ~/.config/neofetch/
+
+- name: Copy neofetch archlinux img
+  copy:
+    src: archlinux.png
+    dest: ~/.config/neofetch/

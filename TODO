@@ -7,5 +7,5 @@ polyconfig
 
 export DOCKER_BUILDKIT=1
 
-config.vm.synced_folder "/home/egon/DummyPackages/apt", "/var/cache/apt",
-user: "root", group: "root", mount_options: ["dmode=777, fmode=646"]
+Automatic mounting
+Multimonitor bg and lock and plybar
