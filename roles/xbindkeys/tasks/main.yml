@@ -1,0 +1,26 @@
+---
+- name: Install xbindkeys and xmodmap
+  package:
+    name:
+      - xbindkeys
+      - xmodmap
+      - playerctl
+    state: present
+  become: True
+
+- name: Configure xmodmap
+  copy:
+    src: xmodmaprc
+    dest: ~/.Xmodmap
+    backup: yes
+
+- name: Configure xbindkeys
+  copy:
+    src: xbindkeysrc
+    dest: ~/.xbindkeysrc
+    backup: yes
+
+- name: Init xbindkeys in .xprofile
+  copy:
+    src: xbindkeys.sh
+    dest: ~/.xprofile.d/
