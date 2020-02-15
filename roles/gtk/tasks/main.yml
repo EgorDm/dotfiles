@@ -2,15 +2,27 @@
 - name: Install Themes and Icons
   aur:
     name:
-      - pop-gtk-theme-bin
       - paper-icon-theme
       - xcursor-breeze
+      - lxappearance
     skip_installed: yes
+
+
+- name: Create theme folder
+  file:
+    path: ~/.themes
+    state: directory
+
+- name: Extract the theme
+  unarchive:
+    src: snazzy-materia.tar.gz
+    dest: ~/.themes
 
 - name: Create gtk conf dir
   file:
     path: ~/.config/gtk-3.0
     state: directory
+
 
 - name: Configure GTK
   copy:

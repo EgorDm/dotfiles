@@ -16,7 +16,6 @@
       # Gui bloat
       - nautilus
       - jgmenu
-      - lxappearance
       - arandr
     state: present
   become: True

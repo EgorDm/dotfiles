@@ -10,6 +10,7 @@
       - which
       - htop
       - networkmanager
+      - the_silver_searcher
     state: present
   become: yes
   ignore_errors: yes
