@@ -13,9 +13,11 @@
       - openvpn
       - alsa-utils
       - feh
+      # Gui bloat
       - nautilus
       - jgmenu
-      - lxappearance # TODO: dev dependency
+      - lxappearance
+      - arandr
     state: present
   become: True
 

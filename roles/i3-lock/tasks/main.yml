@@ -1,0 +1,43 @@
+- name: Install i3 lock requirements
+  package:
+    name:
+      - scrot
+      - imagemagick
+      - bc
+      - xorg-xdpyinfo
+      - xorg-xset
+    state: present
+  become: yes
+  ignore_errors: yes
+
+- name: Clone multilockscreen
+  git:
+    repo: https://github.com/jeffmhubbard/multilockscreen.git
+    dest: ~/.config/multilockscreen
+    version: multi-monitor
+    update: no
+
+- name: Create local bin folder 
+  file:
+    path: ~/.local/bin/
+    state: directory
+
+- name: Copy lockscreen binaries 
+  become: true
+  copy:
+    src: ~/.config/multilockscreen/multilockscreen
+    dest: /usr/bin/multilockscreen
+    mode: a+x
+
+- name: Generate lockscreen background
+  command: multilockscreen -u ~/dotfiles/wallpapers/
+
+- name: Copy the service 
+  become: true
+  copy:
+    src: ~/.config/multilockscreen/system/multilockscreen@.service 
+    dest: /etc/systemd/system/multilockscreen@.service
+
+- name: Register lock service
+  command: systemctl enable multilockscreen@$USER
+

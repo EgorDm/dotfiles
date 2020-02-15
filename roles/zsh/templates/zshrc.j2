@@ -11,6 +11,7 @@ antigen bundle sudo
 antigen bundle extract
 antigen bundle virtualenv
 antigen bundle webyneter/docker-aliases.git
+antigen bundle mafredri/zsh-async
 
 ## ZSH decorations
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -19,7 +20,7 @@ antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle ael-code/zsh-colored-man-pages
 
 ## Theme
-antigen theme bira 
+antigen theme denysdovhan/spaceship-prompt 
 
 ## Done with antigen
 antigen apply
@@ -32,8 +33,11 @@ alias vimconfig="vim ~/.config/nvim/init.vim"
 alias kitconfig="vim ~/.config/kitty/kitty.conf"
 alias sshconfig="vim ~/.ssh/config"
 alias xinconfig="vim ~/.xinitrc"
-alias i3config="vim ~/.config/i3/config"
-alias helpconfig="echo 'Available Configs: zshconfig, vimconfig, sshconfig, xinconfig, i3config'"
+alias i3config="vim ~/.i3/config"
+alias polyconfig="vim ~/.config/polybar/config"
+alias helpconfig="echo 'Available Configs: zshconfig, vimconfig, sshconfig, xinconfig, i3config, polyconfig'"
+
+alias bgupdate='multilockscreen -u ~/dotfiles/wallpapers && multilockscreen -w'
 
 ## Shorthands
 alias vim='nvim'
@@ -82,6 +86,18 @@ export EDITOR='vim'
 export VISUAL='vim'
 export BROWSER='google-chrome-stable'
 
-## Other configs
+## Spaceship theme overrides
+export SPACESHIP_CHAR_SYMBOL=λ
+export SPACESHIP_CHAR_COLOR_SUCCESS=magenta
+export SPACESHIP_CHAR_SUFFIX="  "
+export SPACESHIP_PROMPT_ADD_NEWLINE=false
+export SPACESHIP_GOLANG_SHOW=false
+export SPACESHIP_SWIFT_SHOW_LOCAL=false
+export SPACESHIP_XCODE_SHOW_LOCAL=false
+export SPACESHIP_XCODE_SHOW_GLOBAL=false
+export SPACESHIP_ELIXIR_SHOW=false
+export SPACESHIP_RUBY_SHOW=false
+
+# Other configs
 {% include 'by_host/' + ansible_hostname + '/zshrc.j2' ignore missing %}
 

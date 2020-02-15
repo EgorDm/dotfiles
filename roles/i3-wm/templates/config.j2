@@ -14,12 +14,39 @@ font pango:Cabin, FontAwesome 10
 default_border pixel
 
 ## Colors
-# class                 border  backgr. text    indicator child_border
-client.focused          #222222 #5A5A5A #E1E1E1 #000000   #000000
-client.focused_inactive #222222 #5A5A5A #E1E1E1 #484e50   #000000
-client.unfocused        #222222 #323232 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+# Special
+set_from_resource $foreground foreground
+set_from_resource $background background
+set_from_resource $cursorColor cursorColor
+# Black
+set_from_resource $color0  color0
+set_from_resource $color8  color8
+# Red
+set_from_resource $color1  color1
+set_from_resource $color9  color9
+# Green
+set_from_resource $color2  color2
+set_from_resource $color10 color10
+# Yellow
+set_from_resource $color3  color3
+set_from_resource $color11 color11
+# Blue
+set_from_resource $color4  color4
+set_from_resource $color12 color12
+# Grey
+set_from_resource $color5  color5
+set_from_resource $color13 color13
+# Lightgreen
+set_from_resource $color6  color6
+set_from_resource $color14 color14
+# White
+set_from_resource $color7  color7
+set_from_resource $color15 color15
+# class                 border      backgr.     text        indicator   child_border
+client.focused          $background $background $foreground $background $background
+client.focused_inactive $background $background $foreground $background $background
+client.unfocused        $background $background $color8     $background $background
+client.urgent           $background $background $color1     $background $background
 
 ## Gaps
 for_window [class="^.*"] border pixel 0
@@ -72,7 +99,7 @@ bindsym $mod+e layout toggle split
 ## Toggle tiling / floating
 bindsym $mod+Shift+f floating toggle
 ## Change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+x focus mode_toggle
 
 ## Focus the parent container
 bindsym $mod+a focus parent
@@ -149,14 +176,17 @@ bindsym Mod1+Shift+x exec betterlockscreen -l blur
 
 # Custom programs
 ## Rofi
-bindsym $mod+Tab exec --no-startup-id rofi -show window
-bindsym $mod+d   exec --no-startup-id rofi -show run
-bindsym $mod     exec --no-startup-id rofi -modi drun -show drun
+bindsym $mod+Tab   exec --no-startup-id rofi -show window
+bindsym $mod+d     exec --no-startup-id rofi -show run
+bindsym $mod+space exec --no-startup-id rofi -modi drun -show drun
 
 ## Terminal
 bindsym $mod+t exec kitty
 ## Chrome
 bindsym $mod+c exec chrome
+## Nautilus
+bindsym $mod+n exec nautilus
+
 
 # Startup programs
 ## Polybar exec

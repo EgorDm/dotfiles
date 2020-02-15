@@ -54,8 +54,10 @@ let g:rainbow_active = 1
 " LightLine
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'snazzy',
       \ }
+
+let g:SnazzyTransparent = 1
 
 " Plugins
 call plug#begin('~/.vim/plugged')
@@ -73,6 +75,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'tomtom/tcomment_vim'
 " Rainbow brackets
+Plug 'connorholyday/vim-snazzy'
 Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
@@ -109,3 +112,4 @@ call plug#end()
 " Vim-Rainbow: colours matching bracket pairs the same color
 " auto-pairs: auto types the closing brackets
 
+colorscheme snazzy

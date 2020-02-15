@@ -12,6 +12,11 @@
     dest: ~/.xinitrc
     backup: yes
 
+- name: Create i3 folder 
+  file:
+    path: ~/.i3
+    state: directory
+
 - name: Template config file
   template:
     src: config.j2
@@ -23,45 +28,14 @@
     src: wallpaper.sh
     dest: ~/.xprofile.d/
 
-- name: Install i3 lock requirements
-  package:
-    name:
-      - scrot
-      - imagemagick
-      - bc
-      - xorg-xdpyinfo
-      - xorg-xset
+- name: Configure colors
+  copy:
+    src: colors
+    dest: ~/.Xresources.d/
+
+- name: Init rofi in Xresources
+  lineinfile:
+    path: ~/.Xresources
+    create: yes
     state: present
-  become: yes
-  ignore_errors: yes
-
-- name: Clone betterlockscreen
-  git:
-    repo: https://github.com/pavanjadhaw/betterlockscreen.git
-    dest: ~/.config/betterlockscreen
-    update: no
-
-- name: Create local bin folder 
-  file:
-    path: ~/.local/bin/
-    state: directory
-
-- name: Copy lockscreen binaries 
-  become: true
-  copy:
-    src: ~/.config/betterlockscreen/betterlockscreen
-    dest: /usr/bin/betterlockscreen
-    mode: a+x
-
-- name: Generate lockscreen background
-  command: betterlockscreen -u ~/dotfiles/wallpapers/wallpaper.jpg
-
-- name: Copy the service 
-  become: true
-  copy:
-    src: ~/.config/betterlockscreen/system/betterlockscreen@.service 
-    dest: /etc/systemd/system/betterlockscreen@.service
-
-- name: Register lock service
-  command: systemctl enable betterlockscreen@$USER
-
+    line: '#include ".Xresources.d/colors"'

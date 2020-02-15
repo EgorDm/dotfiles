@@ -8,4 +8,24 @@ polyconfig
 export DOCKER_BUILDKIT=1
 
 Automatic mounting
-Multimonitor bg and lock and plybar
+Docker
+Dark gtk
+Jetbrains ides
+Chrome 
+cmus
+discord
+ssd drivers
+gpu drivers
+work / laptop specifics
+
+BG: #1d1e2a
+FG: #9e9ea3
+SELECT: #6e74aa
+SELECT_FG: #ffffff
+ACT: #ff80e0
+LINK: #747bb4
+VISITED: #ff6666
+RED: #f00101
+NEUTRAL: #ffdd00
+GREEN: #80ff80
+PURPLE: #6e74aa

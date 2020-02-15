@@ -11,6 +11,7 @@
     - { role: fonts, tags: fonts } 
     - { role: gtk, tags: gtk } 
     - { role: i3-wm, tags: i3-wm } 
+    - { role: i3-lock, tags: i3-lock } 
     - { role: picom, tags: picom } 
     - { role: polybar, tags: polybar } 
     - { role: kitty, tags: kitty } 

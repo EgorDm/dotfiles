@@ -17,3 +17,9 @@
     src: kitty.conf
     dest: ~/.config/kitty/kitty.conf
     backup: yes
+
+- name: Configure kitty theme
+  copy:
+    src: theme.conf
+    dest: ~/.config/kitty/theme.conf
+    backup: yes
