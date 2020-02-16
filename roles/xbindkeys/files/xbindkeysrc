@@ -55,9 +55,6 @@
 "playerctl pause"
     XF86AudioPause
 
-"playerctl play"
-    XF86AudioPlay
-
 "playerctl next"
     XF86AudioNext
 

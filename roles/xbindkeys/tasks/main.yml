@@ -3,7 +3,7 @@
   package:
     name:
       - xbindkeys
-      - xmodmap
+      - xorg-xmodmap
       - playerctl
     state: present
   become: True

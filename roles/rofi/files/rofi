@@ -2,7 +2,6 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 ! Color scheme window
-rofi.color-window:                   argb:D0202020,  #f3f99d ,  #f3f99d
 rofi.hide-scrollbar:                 true
 
 ! rofi.fullscreen:                     true

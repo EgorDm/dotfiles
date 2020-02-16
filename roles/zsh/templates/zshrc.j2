@@ -77,8 +77,9 @@ function bak() { cp "$1" "$1.bak" }
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ## Path
-export PATH="~/programs/anaconda/bin:$PATH"        # Prepending avoids a lot of errors
-export PATH="$PATH:~/.config/composer/vendor/bin"
+export PATH="$HOME/programs/anaconda/bin:$PATH"        # Prepending avoids a lot of errors
+export PATH="$PATH:$HOME/.config/composer/vendor/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 ## Exports
 export MAGICK_OCL_DEVICE=OFF                       # Fixes imagick errors at conversion
