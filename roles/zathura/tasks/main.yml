@@ -1,0 +1,19 @@
+---
+- name: Install zathura
+  package:
+    name:
+      - zathura
+    state: present
+  become: True
+
+- name: Create zathura config folder
+  file:
+    path: ~/.config/zathura
+    state: directory
+
+- name: Configure zathura
+  copy:
+    src: zathurarc
+    dest: ~/.config/zathura/
+
+

@@ -1,0 +1,15 @@
+---
+- name: Install Extra packages
+  package:
+    name:
+      - cmus
+    state: present
+  become: True
+
+- name: Install Extra (AUR) packages
+  aur:
+    name:
+      - google-chrome
+    skip_installed: yes
+
+

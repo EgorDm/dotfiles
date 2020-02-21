@@ -7,3 +7,7 @@ discord
 ssd drivers
 gpu drivers
 work / laptop specifics
+
+https://wiki.archlinux.org/index.php/getty#Automatic_login_to_virtual_console
+
+ansible-playbook -i docker/hosts install.yml --tags "dev" --skip-tags="base,desktop"

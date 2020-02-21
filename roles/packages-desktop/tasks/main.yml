@@ -35,3 +35,15 @@
   include_tasks: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
   when: host_file.stat.exists
 
+
+- name: Creates jgmenu conf dir
+  file:
+    path: ~/.config/jgmenu
+    state: directory
+
+- name: Configure jgmenu
+  copy:
+    src: jgmenurc
+    dest: ~/.config/jgmenu/
+
+

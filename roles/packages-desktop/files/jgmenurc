@@ -1,0 +1,16 @@
+color_menu_bg       = #282a36 80
+
+color_norm_bg       = #000000 0
+color_norm_fg       = #eff0eb 100
+
+color_sel_bg        = #6e74aa 80
+color_sel_fg        = #ffffff 100
+
+menu_margin_y       = 20
+sub_spacing         = 0
+
+
+menu_padding_right  = 0
+menu_padding_left   = 0
+menu_padding_top    = 0
+menu_padding_bottom = 0

@@ -191,4 +191,7 @@ bindsym $mod+n exec nautilus
 # Startup programs
 ## Polybar exec
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+# Lock on boot
+exec --no-startup-id bash -c 'multilockscreen -l blur'
+
 
