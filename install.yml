@@ -5,16 +5,42 @@
     - { role: zsh, tags: zsh } 
     - { role: neovim, tags: neovim } 
     - { role: screen, tags: screen } 
+    - { role: neofetch, tags: neofetch } 
+  tags:
+    - base
+    - always
+
+- hosts: desktop:laptop:work
+  roles:
     - { role: xprofile, tags: xprofile } 
-    - { role: packages-desktop, tags: packages-desktop } 
-    - { role: audio, tags: audio } 
+    - { role: packages-desktop, tags: packages-desktop }
+    - { role: audio, tags: audio }
     - { role: fonts, tags: fonts } 
     - { role: gtk, tags: gtk } 
     - { role: i3-wm, tags: i3-wm } 
     - { role: i3-lock, tags: i3-lock } 
     - { role: picom, tags: picom } 
+    - { role: startup, tags: startup } 
     - { role: polybar, tags: polybar } 
     - { role: kitty, tags: kitty } 
     - { role: rofi, tags: rofi } 
-    - { role: neofetch, tags: neofetch } 
+    - { role: xbindkeys, tags: xbindkeys } 
+    - { role: dunst, tags: dunst } 
+  tags:
+    - desktop
+    - always
 
+- hosts: desktop:laptop:work
+  roles:
+    - { role: packages-extra, tags: packages-release }
+    - { role: zathura, tags: zathura }
+  tags:
+    - extras
+
+- hosts: desktop:laptop:work
+  roles:
+    - { role: dev-rust, tags: dev-rust }
+    - { role: dev-python, tags: dev-python }
+    - { role: dev-php, tags: dev-php }
+  tags:
+    - dev

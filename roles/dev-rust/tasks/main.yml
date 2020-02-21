@@ -1,0 +1,31 @@
+---
+- name: install rust by rustup
+  shell: curl https://sh.rustup.rs -sSf | sh -s -- -y
+  args:
+    creates: ~/.rustup
+
+- name: Zsh directory
+  file:
+    path: ~/.zfunc
+    state: directory
+    recurse: yes
+
+- name: Zsh
+  shell: ~/.cargo/bin/rustup completions zsh > ~/.zfunc/_rustup
+  args:
+    creates: ~/.zfunc/_rustup
+
+- name: Install CLion
+  shell: |
+    mkdir -p {{install_path}}
+    curl -L "{{ download_url }}" | tar xvz -C {{ install_path }} --strip 1
+  args:
+    creates: "{{install_path}}"
+  vars:
+    download_url: "https://download.jetbrains.com/product?code=CL&latest&distribution=linux"
+    install_path: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}/clion"
+  tags:
+    - clion
+    - ide
+
+

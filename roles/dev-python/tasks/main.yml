@@ -1,0 +1,24 @@
+---
+- name: Install Anaconda
+  shell: |
+    wget -O - https://www.anaconda.com/distribution/ 2>/dev/null | sed -ne 's@.*\(https:\/\/repo\.anaconda\.com\/archive\/Anaconda3-.*-Linux-x86_64\.sh\)\">64-Bit (x86) Installer.*@\1@p' | xargs wget -O /tmp/anaconda.sh
+    bash /tmp/anaconda.sh -b -p "{{install_path}}"
+  args:
+    creates: "{{install_path}}"
+  vars:
+    install_path: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}/anaconda"
+
+- name: Install PyCharm
+  shell: |
+    mkdir -p "{{install_path}}"
+    curl -L "{{ download_url }}" | tar xvz -C {{ install_path }} --strip 1
+  args:
+    creates: "{{install_path}}"
+  vars:
+    download_url: "https://download.jetbrains.com/product?code=PC&latest&distribution=linux"
+    install_path: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}/pycharm"
+  tags:
+    - pycharm
+    - ide
+
+
