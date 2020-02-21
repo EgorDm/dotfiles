@@ -13,8 +13,9 @@ rofi.bw:                             0
 rofi.lines:                          15
 rofi.location:			     2
 rofi.yoffset:                        23
-rofi.padding:                        10
+rofi.padding:                        20
 rofi.fixed-num-lines:                false
+rofi.levenshtein-sort:               true
 
 ! rofi.kb-cancel:                      Escape,Mod4+w
 rofi.terminal:             kitty
