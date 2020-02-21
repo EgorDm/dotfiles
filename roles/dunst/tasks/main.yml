@@ -1,0 +1,23 @@
+---
+- name: Install dunst
+  package:
+    name:
+      - dunst
+    state: present
+  become: True
+
+- name: Create dunst config folder
+  file:
+    path: ~/.config/dunst
+    state: directory
+
+- name: Configure dunst
+  copy:
+    src: dunstrc
+    dest: ~/.config/dunst/
+
+- name: Init dunst in .xprofile 
+  copy:
+    src: dunst.sh
+    dest: ~/.xprofile.d/
+
