@@ -8,6 +8,7 @@
     - { role: neovim, tags: neovim } 
     - { role: screen, tags: screen } 
     - { role: neofetch, tags: neofetch } 
+    - { role: git, tags: git } 
   tags:
     - base
     - always

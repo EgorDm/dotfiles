@@ -1,4 +1,5 @@
 dt_user: "{{ lookup('pipe', 'whoami') }}"
 dt_user_home: "{{ '~' | expanduser }}"
 dotfiles_dir: '{{ dt_user_home }}/dotfiles'
-programs_dir: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}"
+programs_dir_rel: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}"
+programs_dir: "{{ programs_dir_rel | expanduser }}"

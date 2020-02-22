@@ -1,0 +1,21 @@
+- name: Archlinux Install git
+  package:
+    name: git
+    state: present
+  become: yes
+
+- name: Install git extensions (AUR)
+  aur:
+    name:
+      - gitflow-avh
+    skip_installed: yes
+
+- name: Link global gitignore files
+  template:
+    src: gitignore_global.j2
+    dest: '~/.gitignore_global'
+
+- name: Make sure gitconfig is up to date
+  template:
+    src: gitconfig.j2
+    dest: '~/.gitconfig'

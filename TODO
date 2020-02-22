@@ -5,3 +5,6 @@ gpu drivers
 work / laptop specifics
 
 ansible-playbook -i docker/hosts install.yml --tags "dev" --skip-tags="base,desktop"
+
+Maybe hop over to lightdm with a theme?
+https://github.com/Litarvan/lightdm-webkit-theme-litarvan
