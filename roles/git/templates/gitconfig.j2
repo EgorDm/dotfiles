@@ -59,13 +59,11 @@ finrelease = flow release finish
 support = flow support start
 finsupport = flow support finish
 
-
-[gitflow]
-prefix.feature = feature/
-prefix.hotfix = bugfix/
-prefix.release = release/
-prefix.support = task/
-feature.start.fetch = true
+[gitflow "prefix"]
+  feature = feature/
+  hotfix = bugfix/
+  release = release/
+  support = task/
 
 [color]
 diff = auto
