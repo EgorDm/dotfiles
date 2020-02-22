@@ -53,9 +53,9 @@ let g:rainbow_active = 1
 
 " LightLine
 set laststatus=2
-let g:lightline = {
-      \ 'colorscheme': 'snazzy',
-      \ }
+let g:lightline = {'colorscheme': 'snazzy'}
+let g:airline_theme='base16_snazzy'
+
 
 let g:SnazzyTransparent = 1
 

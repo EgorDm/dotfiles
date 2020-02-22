@@ -6,19 +6,25 @@
   args:
     creates: "{{install_path}}"
   vars:
-    install_path: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}/anaconda"
+    install_path: "{{ programs_dir }}/anaconda"
 
 - name: Install PyCharm
   shell: |
-    mkdir -p "{{install_path}}"
+    mkdir -p {{install_path}}
     curl -L "{{ download_url }}" | tar xvz -C {{ install_path }} --strip 1
   args:
     creates: "{{install_path}}"
   vars:
     download_url: "https://download.jetbrains.com/product?code=PC&latest&distribution=linux"
-    install_path: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}/pycharm"
+    install_path: "{{ programs_dir }}/pycharm"
   tags:
     - pycharm
     - ide
+
+- name: Create PyCharm Desktop Entry
+  template:
+    src: templates/pycharm.desktop.j2
+    dest: /usr/share/applications/pycharm.desktop
+  become: true
 
 

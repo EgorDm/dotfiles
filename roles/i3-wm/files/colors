@@ -13,16 +13,12 @@ Xft.hintstyle:              hintslight
 rofi.color-enabled: true
 
 ! Property Name     BG         Border   Separator
-rofi.color-window:  #bb353944, #404552
+rofi.color-window:  #bb353944, #404552, #eff0eb
 
 ! Property Name    BG         FG       BG-alt     Head-BG    Head-FG
 rofi.color-normal: #00353944, #eff0eb, #00353944, #aa6e74aa, #FFFFFF
 rofi.color-active: #00353944, #eff0eb, #00353944, #cc6e74aa, #FFFFFF
 rofi.color-urgent: #00353944, #eff0eb, #00353944, #cc6e74aa, #FFFFFF
-
-rofi.color-normal:  #34353e, #e2e4e5, #34353e, #34353e, #f1f1f0
-rofi.color-active:  #34353e, #57c7ff, #34353e, #34353e, #57c7ff
-rofi.color-urgent:  #34353e, #ff5c57, #34353e, #34353e, #ff5c57
 
 ! Set the desired separator style
 rofi.separator-style: solid

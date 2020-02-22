@@ -1,15 +1,22 @@
 ---
 - name: Install PhpStorm
   shell: |
-    mkdir -p "{{install_path}}"
-    curl -L "{{ download_url }}" | tar xvz -C "{{ install_path }}" --strip 1
+    mkdir -p {{install_path}}
+    curl -L "{{ download_url }}" | tar xvz -C {{ install_path }} --strip 1
   args:
     creates: "{{install_path}}"
   vars:
     download_url: "https://download.jetbrains.com/product?code=PS&latest&distribution=linux"
-    install_path: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}/phpstorm"
+    install_path: "{{ programs_dir }}/phpstorm"
   tags:
     - phpstorm
     - ide
+
+
+- name: Create PhpStorm Desktop Entry
+  template:
+    src: templates/phpstorm.desktop.j2
+    dest: /usr/share/applications/phpstorm.desktop
+  become: true
 
 

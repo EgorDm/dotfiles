@@ -1,5 +1,7 @@
 ---
 - hosts: all
+  vars_files:
+    - vars/main.yml
   roles:
     - { role: packages-base, tags: packages-base }
     - { role: zsh, tags: zsh } 
@@ -11,6 +13,8 @@
     - always
 
 - hosts: desktop:laptop:work
+  vars_files:
+    - vars/main.yml
   roles:
     - { role: xprofile, tags: xprofile } 
     - { role: packages-desktop, tags: packages-desktop }
@@ -31,6 +35,8 @@
     - always
 
 - hosts: desktop:laptop:work
+  vars_files:
+    - vars/main.yml
   roles:
     - { role: packages-extra, tags: packages-release }
     - { role: zathura, tags: zathura }
@@ -38,7 +44,10 @@
     - extras
 
 - hosts: desktop:laptop:work
+  vars_files:
+    - vars/main.yml
   roles:
+    - { role: dev-docker, tags: dev-docker }
     - { role: dev-rust, tags: dev-rust }
     - { role: dev-python, tags: dev-python }
     - { role: dev-php, tags: dev-php }

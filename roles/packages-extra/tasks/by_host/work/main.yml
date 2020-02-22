@@ -1,0 +1,8 @@
+---
+- name: Install Extra (AUR) packages
+  aur:
+    name:
+      - slack-desktop
+    skip_installed: yes
+
+

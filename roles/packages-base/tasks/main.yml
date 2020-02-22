@@ -11,6 +11,7 @@
       - htop
       - networkmanager
       - the_silver_searcher
+      - fd
     state: present
   become: yes
   ignore_errors: yes

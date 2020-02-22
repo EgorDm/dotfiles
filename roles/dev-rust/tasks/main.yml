@@ -23,9 +23,15 @@
     creates: "{{install_path}}"
   vars:
     download_url: "https://download.jetbrains.com/product?code=CL&latest&distribution=linux"
-    install_path: "{{ lookup('env','PROGRAMS_PATH')|d('~/programs',true) }}/clion"
+    install_path: "{{ programs_dir }}/clion"
   tags:
     - clion
     - ide
+
+- name: Create Clion Desktop Entry
+  template:
+    src: templates/clion.desktop.j2
+    dest: /usr/share/applications/clion.desktop
+  become: true
 
 

@@ -194,4 +194,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Lock on boot
 exec --no-startup-id bash -c 'multilockscreen -l blur'
 
+# Host specific stuff
+{% include 'by_host/' + ansible_hostname + '/config.j2' ignore missing %}
+
+{% include 'by_os/' + ansible_distribution|lower + '/config.j2' ignore missing %}
 

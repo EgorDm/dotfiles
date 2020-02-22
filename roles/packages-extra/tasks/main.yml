@@ -6,10 +6,25 @@
     state: present
   become: True
 
+- name: Install Extra packages (not work)
+  package:
+    name:
+      - discord
+    state: present
+  become: True
+  when: ansible_hostname != 'work'
+
 - name: Install Extra (AUR) packages
   aur:
     name:
       - google-chrome
     skip_installed: yes
 
+- name: Test host packages file
+  stat:
+    path: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
+  register: host_file
 
+- name: Include host packages
+  include_tasks: "{{ role_path }}/tasks/by_host/{{ ansible_hostname }}/main.yml"
+  when: host_file.stat.exists
