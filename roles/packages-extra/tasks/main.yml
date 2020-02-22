@@ -3,6 +3,7 @@
   package:
     name:
       - cmus
+      - spotify
     state: present
   become: True
 
