@@ -46,9 +46,7 @@ VOLUME /home/$CFG_USER/dotfiles
 
 ARG CFG_HOST=desktop
 
-RUN --mount=type=cache,target=/var/cache/pacman/pkg \
-  --mount=type=cache,target=/home/$CFG_USER/.cache/yay \
-  cd dotfiles; ansible-playbook -i docker/hosts install.yml | tee ansible.log
+RUN cd dotfiles; ansible-playbook -i docker/hosts install.yml | tee ansible.log
 RUN echo -e "$CFG_PASS" | chsh -s '/usr/bin/zsh'
 
 ENTRYPOINT /usr/bin/zsh
