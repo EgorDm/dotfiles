@@ -1,10 +1,12 @@
-name: Test build
+name: Build Image
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+        submodules: recursive
     - name: Build the Docker image
       run: docker build . --file docker/Dockerfile --tag egordm/dotfiles:$(date +%s)
     - name: Run tests
