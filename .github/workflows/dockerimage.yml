@@ -12,6 +12,6 @@ jobs:
         git submodule sync --recursive
         git -c "http.extraheader=$auth_header" -c protocol.version=2 submodule update --init --force --recursive --depth=1
     - name: Build the Docker image
-      run: docker build . --file docker/Dockerfile --tag egordm/dotfiles:$(date +%s)
+      run: docker build . --file docker/Dockerfile --tag egordm/dotfiles:latest
     - name: Run tests
-      run: docker run egordm/dotfiles dotfiles/docker/test.sh
+      run: docker run egordm/dotfiles:latest dotfiles/docker/test.sh
