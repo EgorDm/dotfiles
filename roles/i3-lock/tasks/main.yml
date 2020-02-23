@@ -17,12 +17,12 @@
     version: multi-monitor
     update: no
 
-- name: Create local bin folder 
+- name: Create local bin folder
   file:
     path: ~/.local/bin/
     state: directory
 
-- name: Copy lockscreen binaries 
+- name: Copy lockscreen binaries
   become: true
   copy:
     src: ~/.config/multilockscreen/multilockscreen
@@ -32,12 +32,13 @@
 - name: Generate lockscreen background
   command: multilockscreen -u ~/dotfiles/wallpapers/
 
-- name: Copy the service 
+- name: Copy the service
   become: true
   copy:
-    src: ~/.config/multilockscreen/system/multilockscreen@.service 
+    src: ~/.config/multilockscreen/system/multilockscreen@.service
     dest: /etc/systemd/system/multilockscreen@.service
 
 - name: Register lock service
   command: systemctl enable multilockscreen@$USER
+  become: true
 

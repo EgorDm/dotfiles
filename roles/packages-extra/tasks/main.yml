@@ -3,7 +3,6 @@
   package:
     name:
       - cmus
-      - spotify
     state: present
   become: True
 
@@ -19,6 +18,7 @@
   aur:
     name:
       - google-chrome
+      - spotify
     skip_installed: yes
 
 - name: Test host packages file
