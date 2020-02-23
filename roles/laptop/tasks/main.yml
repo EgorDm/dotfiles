@@ -1,0 +1,56 @@
+---
+- name: Install laptop packages
+  package:
+    name:
+      - light
+      - xf86-input-synaptics
+      - xf86-video-intel
+      - powertop
+      - acpid
+    state: present
+  become: True
+
+- name: Install laptop (AUR) packages
+  aur:
+    name:
+      - laptop-mode-tools
+    skip_installed: yes
+
+- name: Enable laptop powermode service
+  become: true
+  systemd:
+    name: laptop-mode.service
+    enabled: yes
+
+- name: Enable laptop powermode service
+  become: true
+  systemd:
+    name: acpid.service
+    enabled: yes
+
+- name: Create xorg confd folder
+  become: true
+  file:
+    path: /etc/X11/xorg.conf.d
+    state: directory
+
+- name: Configure synaptics touchpad
+  become: true
+  copy:
+    src: 70-synaptics.conf
+    dest: /etc/X11/xorg.conf.d/70-synaptics.conf
+    backup: yes
+
+- name: Change mode for brightness settings
+  become: true
+  file:
+    path: /sys/class/backlight/intel_backlight/brightness
+    mode: '0644'
+    mode: o=rw,g=rw,u=r
+
+- name: Adding user to video group
+  become: true
+  user:
+    name: '{{ ansible_user }}'
+    groups: video
+    append: yes

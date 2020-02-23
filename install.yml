@@ -4,11 +4,11 @@
     - vars/main.yml
   roles:
     - { role: packages-base, tags: packages-base }
-    - { role: zsh, tags: zsh } 
-    - { role: neovim, tags: neovim } 
-    - { role: screen, tags: screen } 
-    - { role: neofetch, tags: neofetch } 
-    - { role: git, tags: git } 
+    - { role: zsh, tags: zsh }
+    - { role: neovim, tags: neovim }
+    - { role: screen, tags: screen }
+    - { role: neofetch, tags: neofetch }
+    - { role: git, tags: git }
   tags:
     - base
     - always
@@ -17,23 +17,33 @@
   vars_files:
     - vars/main.yml
   roles:
-    - { role: xprofile, tags: xprofile } 
+    - { role: xprofile, tags: xprofile }
     - { role: packages-desktop, tags: packages-desktop }
     - { role: audio, tags: audio }
-    - { role: fonts, tags: fonts } 
-    - { role: gtk, tags: gtk } 
-    - { role: i3-wm, tags: i3-wm } 
-    - { role: i3-lock, tags: i3-lock } 
-    - { role: picom, tags: picom } 
-    - { role: startup, tags: startup } 
-    - { role: polybar, tags: polybar } 
-    - { role: kitty, tags: kitty } 
-    - { role: rofi, tags: rofi } 
-    - { role: xbindkeys, tags: xbindkeys } 
-    - { role: dunst, tags: dunst } 
+    - { role: fonts, tags: fonts }
+    - { role: gtk, tags: gtk }
+    - { role: i3-wm, tags: i3-wm }
+    - { role: i3-lock, tags: i3-lock }
+    - { role: picom, tags: picom }
+    - { role: startup, tags: startup }
+    - { role: polybar, tags: polybar }
+    - { role: kitty, tags: kitty }
+    - { role: rofi, tags: rofi }
+    - { role: xbindkeys, tags: xbindkeys }
+    - { role: dunst, tags: dunst }
   tags:
     - desktop
     - always
+
+- hosts: laptop:work
+  vars_files:
+    - vars/main.yml
+  roles:
+    - { role: laptop, tags: laptop }
+  tags:
+    - laptop
+    - always
+
 
 - hosts: desktop:laptop:work
   vars_files:
