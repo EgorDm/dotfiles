@@ -64,7 +64,16 @@
 "light -A 5"
     XF86MonBrightnessUp
 
-"maim -s -d2"
+"maim -s ~/Pictures/$(date +%s).png"
+    Shift + Print
+
+"maim ~/Pictures/$(date +%s).png"
+    Shift + Print
+
+"maim -s | xclip -selection clipboard -t image/png"
+    Control+Shift + Print
+
+"maim -s /tmp/screenshot.png; imgur.sh /tmp/screenshot.png | xclip -selection clipboard""
     Mod2 + Print
 
 "xdotool click --clearmodifiers 2"

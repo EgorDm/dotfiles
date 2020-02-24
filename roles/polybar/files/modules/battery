@@ -1,7 +1,7 @@
 [module/battery]
 type = internal/battery
-battery = BAT0
-adapter = AC
+battery = BAT1
+adapter = ACAD
 full-at = 98
 time-format = "%H%{F#92}%M%{F-}"
 
