@@ -9,3 +9,6 @@ ansible-playbook -i docker/hosts install.yml --tags "dev" --skip-tags="base,desk
 Maybe hop over to lightdm with a theme?
 https://github.com/Litarvan/lightdm-webkit-theme-litarvan
 
+
+Add some useful scripts such as
+https://github.com/tremby/imgur.sh

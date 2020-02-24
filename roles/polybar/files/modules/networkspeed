@@ -18,7 +18,7 @@ format-connected-prefix-foreground = #5b
 
 [module/networkspeeddown-wireless]
 type = internal/network
-interface = wlp2s0
+interface = wlp3s0
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-suffix = "ﰬ"
@@ -27,7 +27,7 @@ format-connected-suffix-foreground = #5b
 
 [module/networkspeedup-wireless]
 type = internal/network
-interface = wlp2s0
+interface = wlp3s0
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = "ﰵ"

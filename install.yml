@@ -9,6 +9,7 @@
     - { role: screen, tags: screen }
     - { role: neofetch, tags: neofetch }
     - { role: git, tags: git }
+    - { role: scripts, tags: scripts }
   tags:
     - base
     - always
@@ -62,5 +63,6 @@
     - { role: dev-rust, tags: dev-rust }
     - { role: dev-python, tags: dev-python }
     - { role: dev-php, tags: dev-php }
+    - { role: dev-csharp, tags: dev-csharp }
   tags:
     - dev
