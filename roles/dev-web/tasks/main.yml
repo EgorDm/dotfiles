@@ -1,0 +1,20 @@
+---
+- name: Install WebStorm
+  shell: |
+    mkdir -p {{install_path}}
+    curl -L "{{ download_url }}" | tar xvz -C {{ install_path }} --strip 1
+  args:
+    creates: "{{install_path}}"
+  vars:
+    download_url: "https://download.jetbrains.com/product?code=WS&latest&distribution=linux"
+    install_path: "{{ programs_dir }}/webstorm"
+  tags:
+    - webstorm
+    - ide
+
+- name: Create Webstorm Desktop Entry
+  template:
+    src: templates/webstorm.desktop.j2
+    dest: /usr/share/applications/webstorm.desktop
+  become: true
+

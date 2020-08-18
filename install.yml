@@ -64,5 +64,6 @@
     - { role: dev-python, tags: dev-python }
     - { role: dev-php, tags: dev-php }
     - { role: dev-csharp, tags: dev-csharp }
+    - { role: dev-web, tags: dev-web }
   tags:
     - dev
