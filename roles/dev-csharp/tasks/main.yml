@@ -29,10 +29,10 @@
     state: present
   become: True
 
-- name: Install CSharp (AUR) packages
-  aur:
-    name:
-      - msbuild-16-bin
-    skip_installed: yes
+  #- name: Install CSharp (AUR) packages
+  #  aur:
+  #    name:
+  #      - msbuild-16-bin
+  #    skip_installed: yes
 
 
