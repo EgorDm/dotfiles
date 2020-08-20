@@ -1,0 +1,11 @@
+[$Version]
+update_info=kscreenlocker.upd:0.1-autolock
+
+[Daemon]
+Autolock=false
+
+[Greeter]
+Theme=com.github.vinceliuice.ChromeOS-dark
+
+[Greeter][Wallpaper][org.kde.image][General]
+Image=/home/egordm/dotfiles/resources/wallpapers/2.jpg

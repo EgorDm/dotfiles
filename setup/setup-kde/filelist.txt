@@ -1,0 +1,23 @@
+## Theme
+~/.local/share/color-schemes/DraculaPurple.colors
+~/.kde4/share/apps/color-schemes/DraculaPurple.colors
+## KDE
+~/.config/kdeglobals
+~/.kde4/share/config/kdeglobals
+~/.config/ksplashrc
+~/.config/Kvantum/kvantum.kvconfig
+~/.config/kwinrc
+~/.config/Trolltech.conf
+~/.config/plasma-org.kde.plasma.desktop-appletsrc
+## Lock
+/etc/sddm.conf
+~/.config/kscreenlockerrc
+## GTK
+~/.config/gtk-3.0/settings.ini
+## Konsole
+~/.local/share/konsole/snazzy.colorscheme
+~/.local/share/konsole/MainProfile.profile
+~/.config/konsolerc
+## Shortcuts
+~/.config/kglobalshortcutsrc
+~/.config/khotkeysrc
