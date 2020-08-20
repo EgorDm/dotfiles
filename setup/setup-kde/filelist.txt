@@ -21,3 +21,7 @@
 ## Shortcuts
 ~/.config/kglobalshortcutsrc
 ~/.config/khotkeysrc
+## Other
+~/.config/autostart-scripts/xres.sh
+~/.config/bat/config
+~/.config/bat/themes/sublime-snazzy/Sublime Snazzy.tmTheme

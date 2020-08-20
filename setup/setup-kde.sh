@@ -26,7 +26,7 @@ git clone https://github.com/vinceliuice/Tela-icon-theme.git && cd Tela-icon-the
 sudo pacman -S ansible
 git clone https://github.com/EgorDm/dotfiles.git
 
-ansible-playbook -i docker/hosts install.yml --tags "neovim,zsh,git,neofetch,rofi" --skip-tags="base,desktop,dev,extras"
+ansible-playbook install.yml -l localhost -K --tags "neovim,zsh,git,neofetch,rofi" --skip-tags="base,desktop,dev,extras"
 
 # xmodmap
 sudo pacman -S xorg-xmodmap
@@ -50,3 +50,9 @@ sudo rm /usr/share/sddm/themes/ChromeOS/background.jpg && sudo cp ~/dotfiles/wal
 sudo pacman -S ttf-fira-code
 
 ansible-playbook install.yml -l localhost -K  --tags "dev" --skip-tags="base,desktop,extras"
+
+bat --list-themes
+mkdir -p "$(bat --config-dir)/themes"
+cd "$(bat --config-dir)/themes"
+git clone https://github.com/greggb/sublime-snazzy
+bat cache --build

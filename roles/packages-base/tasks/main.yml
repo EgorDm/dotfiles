@@ -5,12 +5,10 @@
       - curl
       - wget
       - jq
-      - fzf
       - rsync
       - which
       - htop
       - networkmanager
-      - the_silver_searcher
       - fd
     state: present
   become: yes

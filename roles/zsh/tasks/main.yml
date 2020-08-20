@@ -4,6 +4,16 @@
   become: True
   ignore_errors: True
 
+- name: Install utilities
+  package:
+    name:
+      - bat
+      - ripgrep
+      - fzf
+    state: present
+  become: yes
+  ignore_errors: yes
+
 - name: Create zsh dirs
   file: path={{item}} state=directory
   with_items:

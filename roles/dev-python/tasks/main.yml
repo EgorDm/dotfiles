@@ -27,4 +27,10 @@
     dest: /usr/share/applications/pycharm.desktop
   become: true
 
+  - name: Create PyCharm Desktop Entry
+  template:
+    src: templates/pycharm.desktop.j2
+    dest: .local/share/applications/pycharm.desktop
+  become: false
+
 

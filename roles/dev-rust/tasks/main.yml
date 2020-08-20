@@ -34,4 +34,8 @@
     dest: /usr/share/applications/clion.desktop
   become: true
 
-
+- name: Create Clion Desktop Entry
+  template:
+    src: templates/clion.desktop.j2
+    dest: .local/share/applications/clion.desktop
+  become: false

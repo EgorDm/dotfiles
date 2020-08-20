@@ -18,6 +18,12 @@
     dest: /usr/share/applications/rider.desktop
   become: true
 
+- name: Create Rider Desktop Entry
+  template:
+    src: templates/rider.desktop.j2
+    dest: .local/share/applications/rider.desktop
+  become: false
+
 - name: Install CSharp packages
   package:
     name:

@@ -19,4 +19,8 @@
     dest: /usr/share/applications/phpstorm.desktop
   become: true
 
-
+- name: Create PhpStorm Desktop Entry
+  template:
+    src: templates/phpstorm.desktop.j2
+    dest: .local/share/applications/phpstorm.desktop
+  become: false

@@ -18,3 +18,10 @@
     dest: /usr/share/applications/webstorm.desktop
   become: true
 
+- name: Create Webstorm Desktop Entry
+  template:
+    src: templates/webstorm.desktop.j2
+    dest: .local/share/applications/webstorm.desktop
+  become: false
+
+
